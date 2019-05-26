@@ -11,6 +11,11 @@ use std::cmp::Ordering;
 
 
 fn main() {
+ 
+ fn generate_random_numbers();
+}
+
+fn generate_random_numbers() {
     let mut rng = rand::thread_rng();
 
     let n1: u8 = rng.gen();
@@ -23,13 +28,13 @@ fn main() {
 }
 
 
-fn main() {
+fn random_numbers_with_range() {
     let mut rng = rand::thread_rng();
     println!("Integer: {}", rng.gen_range(0, 10));
     println!("Float: {}", rng.gen_range(0.0, 10.0));
 }
 
-fn main() {
+fn random_string() {
     let rand_string: String = thread_rng()
         .sample_iter(&Alphanumeric)
         .take(30)
@@ -38,7 +43,7 @@ fn main() {
     println!("{}", rand_string);
 }
 
-fn main() {
+fn sort_vector_i() {
     let mut vec = vec![1, 5, 10, 2, 15];
 
     vec.sort();
@@ -47,7 +52,7 @@ fn main() {
     println!("{:?}",vec);
 }
 
-fn main() {
+fn sort_vector_f() {
     let mut vec = vec![1.1, 1.15, 5.5, 1.123, 2.0];
 
     vec.sort_by(|a, b| a.partial_cmp(b).unwrap());
@@ -56,7 +61,7 @@ fn main() {
      println!("{:?}",vec);
 }
 
-fn main() {
+fn float_vector_count() {
     let mut index = 0;
     let mut index_two = 0;
     let mut i_300=0;
@@ -87,7 +92,7 @@ fn main() {
     println!("0 to 300: {}, 300 to 600: {}, 600 above: {}",i_300,i_600,i_above);
 }
 
-fn main() {
+fn integer_vector() {
 
     let mut index = 0;
     let mut index_two = 0;
@@ -118,7 +123,7 @@ fn main() {
 }
 
 
-fn main() {
+fn guess_number() {
     println!("Guess the number!");
 
     let secret_number = rand::thread_rng().gen_range(1, 10);
@@ -149,10 +154,7 @@ fn main() {
     }
 }
 
-#[macro_use]
-extern crate text_io;
-
-fn main() {
+fn dice_game() {
     println!("HERE COMES THE DICE! ");
     println!("Roll # 01");
     let num_one: i32 = read!();
@@ -161,7 +163,7 @@ fn main() {
     println!("The Total is: {}", num_one+num_two);
 }
 
-fn main() {
+fn hilo_tries() {
     println!("Guess the number!");
 
     let secret_number = rand::thread_rng().gen_range(1, 100);
@@ -194,7 +196,7 @@ fn main() {
     }
 }
 
-fn main() {
+fn value_in_loop() {
 
     let mut sum_number = 0;
     while true{
