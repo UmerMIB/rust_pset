@@ -98,7 +98,7 @@ fn is_vowel(){
     print!("Enter a Character: ");
     let mut str =  get_input();
 
-match str.as_ref() {
+    match str.as_ref(){
         // Match several values
         "a" | "e" | "i" | "o" | "u" | "A" | "E" | "I" | "O" | "U" => println!("Letter {}  is Vowel: ", &str),
         _ => println!("{} is Not a Vowel ", &str),
@@ -225,8 +225,7 @@ fn binary_to_decimal(){
     let mut rem;
 
     let binary = num;
-    while (num > 0)
-    {
+    while num > 0 {
         rem = num % 10;
         decimal = decimal + rem * base;
         num = num / 10 ;
@@ -235,6 +234,110 @@ fn binary_to_decimal(){
     println!("Decimal Representation of {} is {}", binary, decimal);
 }
 
+fn vowels_consonants() {
+
+    println!("Enter Text: ");
+    let string =  get_input();
+
+    let (mut vowels, mut consonants) = (0,0);
+
+    for str in string.chars() {
+        match str {
+            'a' | 'e' | 'i' | 'o' | 'u' | 'A' | 'E' | 'I' | 'O' | 'U' => vowels += 1,
+            _ => consonants += 1,
+        }
+    }
+
+    println!("\nNumber = {}", vowels);
+    println!("\nAlphabets = {}", consonants);
+
+}
+
+fn is_palindrom(){
+    println!("Enter a Binary number: ");
+    let string =  get_input();
+
+    let s = string.to_string().to_lowercase().chars().filter(|&c| c.is_alphanumeric()).collect::<String>();
+
+    if s == s.chars().rev().collect::<String>() {
+        print!("Text {} is Palindrome", &string);
+    } else {
+        print!("Text {} is not Palindrome", &string);
+    }
+}
+
+
+fn count_data_types() {
+
+    println!("Enter Text: ");
+    let string =  get_input();
+
+    let (mut number, mut aplhabet, mut space, mut special_character) = (0,0,0,0);
+
+    for str in string.chars() {
+        match str {
+            'a'...'z' | 'A'...'Z' => aplhabet += 1,
+            '0'...'9' => number += 1,
+            ' ' => space += 1,
+            _ => special_character += 1,
+        }
+    }
+
+    println!("\nNumber = {}", number);
+    println!("\nAlphabets = {}", aplhabet);
+    println!("\nSpecial Characters = {}", special_character);
+    println!("\nSpaces = {}", space);
+}
+
+fn pattern20(){
+    for row in 1..7
+    {
+        for _b in 1..row
+        {
+            print!("*");
+        }
+        println!("");   
+    }
+    for row in (1..6).rev()
+    {
+        for _b in 1..row
+        {
+            print!("*");
+        }
+        println!("");   
+    }
+}
+
+fn pattern21(){
+        for row in 1..7
+    {
+        for _b in 1..row
+        {
+            print!("{}",_b);
+        }
+        println!("");   
+    }
+    for row in (1..6).rev()
+    {
+        for _b in 1..row
+        {
+            print!("{}",_b);
+        }
+        println!("");   
+    }
+
+}
+
+fn pattern22(){
+     for row in 0..10
+    {
+        for _b in 0..row
+        {
+            print!("{}",row);
+        }
+        println!("");   
+    }
+}
 
 
 fn get_input() -> String {
