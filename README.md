@@ -1,2 +1,2 @@
-# rust_assign
-rust assigments
+# rust_psets
+rust psets
